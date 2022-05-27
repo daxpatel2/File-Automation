@@ -3,7 +3,7 @@ from shutil import move #offers high level file interaction
 import datetime #to write to current time to log file
 
 with open('/Users/daxpatel/Downloads/Log/log.txt', 'a') as f:
-    log = f.read()
+    log = f
     log.write('File was read on {}\n'.format(datetime.datetime.now()))
 
 #os.getenv('USER') gets the users environment variable (in our example it is the username)
