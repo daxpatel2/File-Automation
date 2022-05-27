@@ -1,0 +1,1 @@
+We can make this an interactive app where we ask which folders then want to organize and the have the script run

@@ -22,7 +22,6 @@ document_types = ('.doc', '.docx', '.txt', '.pdf', '.xls', '.ppt', '.xlsx', '.pp
 img_types = ('.jpg', '.jpeg', '.png', '.svg', '.gif', '.tif', '.tiff', '.bmp')
 software_types = ('.exe', '.pkg', '.dmg', '.msi', '.app', '.deb', '.rpm', '.msp')
 
-
 #grab all files in root directory excluding current file
 def get_files(root_dir):
     return [f for f in os.listdir(root_dir) if os.path.isfile(f) and not f.startswith('.') and not f.__eq__(__file__)]
@@ -34,7 +33,7 @@ def move_files(files):
             if file not in documents_dir:
                 try:
                     move(file, documents_dir)
-                    log.write('Successfully moved {} to Documents folder on {}\n'.format(file, datetime.datetime.now()))
+                    #log.write('Successfully moved {} to Documents folder on {}\n'.format(file, datetime.datetime.now()))
                     #write to the log file 
                 except:
                     log.write('Failed to move {} to Documents folder\n'.format(file))
@@ -45,7 +44,7 @@ def move_files(files):
             if file not in img_dir:
                 try:
                     move(file, documents_dir)
-                    log.write('Successfully moved {} to Images folder on {}\n'.format(file, datetime.datetime.now()))
+                    #log.write('Successfully moved {} to Images folder on {}\n'.format(file, datetime.datetime.now()))
                 except:
                     log.write('Failed to move {} to Images folder\n'.format(file))
                     #move(file, '{}/{}'.format(img_dir, file))
@@ -54,7 +53,7 @@ def move_files(files):
             if file not in software_dir:
                 try:
                     move(file, documents_dir)
-                    log.write('Successfully moved {} to Softwares folder {}\n'.format(file,datetime.datetime.now()))
+                    #log.write('Successfully moved {} to Softwares folder {}\n'.format(file,datetime.datetime.now()))
                 except:
                     log.write('Failed to move {} to Softwares folder\n'.format(file))
                     #move(file, '{}/{}'.format(software_dir, file))
@@ -62,7 +61,7 @@ def move_files(files):
             if file not in others_dir:
                 try:
                     move(file, documents_dir)
-                    log.write('Successfully moved {} to Others folder on {}\n'.format(file, datetime.datetime.now()))
+                    #log.write('Successfully moved {} to Others folder on {}\n'.format(file, datetime.datetime.now()))
                 except:
                     log.write('Failed to move {} to Others folder\n'.format(file))
                     #move(file, '{}/{}'.format(others_dir, file))
