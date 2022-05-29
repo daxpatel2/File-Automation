@@ -6,11 +6,12 @@ with open('/Users/daxpatel/Downloads/Log/log.txt', 'a') as f:
     log = f
     log.write('File was read on {}\n'.format(datetime.datetime.now()))
 
-#os.getenv('USER') gets the users environment variable (in our example it is the username)
+#os.getenv('USER') gets the users environment variable (in our example it is the username so we can acess folders like \user\daxpatel\downloads)
 USER = os.getenv('USER')
 
-#go to root directory where most files will be stored
+#directories that we want to clean
 root_dir = '/Users/{}/Downloads/'.format(USER)
+desktop_dir = '/Users/{}/Desktop/'.format(USER)
 #go to each root directory per file type:
 img_dir = '/Users/{}/Downloads/images/'.format(USER)
 documents_dir = '/Users/{}/Downloads/documents/'.format(USER)
@@ -66,6 +67,9 @@ def move_files(files):
                     log.write('Failed to move {} to Others folder\n'.format(file))
                     #move(file, '{}/{}'.format(others_dir, file))
 
-if __name__ == '__main__':
-    files = get_files(root_dir)
-    move_files(files)
+def main():
+    if __name__ == '__main__':
+        files = get_files(root_dir)
+        move_files(files)
+
+main()
