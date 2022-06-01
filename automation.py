@@ -4,9 +4,11 @@ from shutil import move #offers high level file interaction
 import datetime #to write to current time to log file
 
 #we need better logging functionality so the user can check log file for all movements of files
-with open('/Users/daxpatel/Downloads/Log/log.txt', 'a') as f:
-    log = f
-    log.write('File was read on {}\n'.format(datetime.datetime.now()))
+log_open = open('/Users/daxpatel/Downloads/Log/log.txt', 'a')
+log = log_open.write('File was read on {}\n'.format(datetime.datetime.now()))
+
+filers = open('/Users/daxpatel/Downloads/Log/file_log.txt', 'a')
+file_write = filers
 
 #os.getenv('USER') gets the users environment variable (in our example it is the username so we can acess folders like \user\daxpatel\downloads)
 USER = os.getenv('USER')
@@ -50,38 +52,33 @@ def move_files(files):
             if file not in go_dir+'documents/':
                 try:
                     move(file, go_dir+'documents/')
-                    #log.write('Successfully moved {} to Documents folder on {}\n'.format(file, datetime.datetime.now()))
-                    #write to the log file 
+                    file_write.write('Successfully moved {} to Documents folder on {}\n'.format(file, datetime.datetime.now()))
                 except:
-                    log.write('Failed to move {} to Documents folder\n'.format(file))
+                    file_write.write('Failed to move {} to Documents folder\n'.format(file))
                     #write to the log file in caps for errors
 
-            #move(file, '{}/{}'.format(documents_dir_downloads, file))
         elif file.endswith(img_types):
             if file not in go_dir+'images/':
                 try:
                     move(file, go_dir+'images/')
-                    #log.write('Successfully moved {} to Images folder on {}\n'.format(file, datetime.datetime.now()))
+                    file_write.write('Successfully moved {} to Images folder on {}\n'.format(file, datetime.datetime.now()))
                 except:
-                    log.write('Failed to move {} to Images folder\n'.format(file))
-                    #move(file, '{}/{}'.format(img_dir_downloads, file))
+                    file_write.write('Failed to move {} to Images folder\n'.format(file))
 
         elif file.endswith(software_types):
             if file not in go_dir+'softwares/':
                 try:
                     move(file, go_dir+'softwares/')
-                    #log.write('Successfully moved {} to Softwares folder {}\n'.format(file,datetime.datetime.now()))
+                    file_write.write('Successfully moved {} to Softwares folder {}\n'.format(file,datetime.datetime.now()))
                 except:
-                    log.write('Failed to move {} to Softwares folder\n'.format(file))
-                    #move(file, '{}/{}'.format(software_dir_downloads, file))
+                    file_write.write('Failed to move {} to Softwares folder\n'.format(file))
         else:
             if file not in go_dir+'others/':
                 try:
                     move(file, go_dir+'others/')
-                    #log.write('Successfully moved {} to Others folder on {}\n'.format(file, datetime.datetime.now()))
+                    file_write.write('Successfully moved {} to Others folder on {}\n'.format(file, datetime.datetime.now()))
                 except:
-                    log.write('Failed to move {} to Others folder\n'.format(file))
-                    #move(file, '{}/{}'.format(others_dir_downloads, file))
+                    file_write.write('Failed to move {} to Others folder\n'.format(file))
 
 #will have to fix this to move files to their proper directory
 def main():
