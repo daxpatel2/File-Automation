@@ -86,7 +86,7 @@ def move_files(files):
 #will have to fix this to move files to their proper directory
 def main():
     if __name__ == '__main__':
-        files = get_files(root_dir)
+        files = get_files(go_dir)
         move_files(files)
 
 main()
