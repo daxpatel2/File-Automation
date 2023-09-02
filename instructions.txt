@@ -1,0 +1,19 @@
+HOW TO RUN THIS PROGRAM:
+
+move the automation.py file to safe secure location that is easily accessible (for example your documents folder and maybe a subfolder within documents folder)
+
+make sure to have the latest version of python installed on your machine
+
+run this automation.py program from a directory of your choice, preferably a directory which you wish to organize/clean
+
+instructions to run:
+
+open terminal or command prompt
+
+run the following command
+
+python3 absolute_path_of_the_automation.py_program
+
+thats all, if you ran this correctly you should see a console message that says
+----->RUNNING PROGRAM<-------
+
