@@ -64,20 +64,6 @@ if os.path.isdir(currDir+"/software"):
 else:
     os.mkdir("software")
 
-# if os.path.isdir(currDir+"/other"):
-#     for idx,file in enumerate(files):
-#         if file not in currDir+"other/":
-#             try:
-#                 move(file, currDir+"/other/")
-#                 logFile.write('Successfully moved {} to other folder on {}\n'.format(file, datetime.datetime.now()))
-#             except Exception as e:
-#                 if isinstance(e, FileExistsError):
-#                     move(file,currDir+"/failed/")
-#                     print("failed to move {}, File already Existed, moving to failed directory".format(file))
-#                 logFile.write("Failed to move file {}, because {}\n".format(file,e))
-# else:
-#     os.mkdir("other")
-
 logFile.close()
 
 def main():
