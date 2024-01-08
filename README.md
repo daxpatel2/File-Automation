@@ -17,7 +17,7 @@ Hello, I'm Dax Patel, and I'm passionate about automating tasks and making life 
 
 1. Clone the repository to your local machine.
 2. Place the script in the directory containing the files you want to organize.
-3. Run the script, and it will categorize and move the files accordingly.
+3. Run the script(additional instructions included in the files), and it will categorize and move the files accordingly.
 
 #### Contributions:
 
