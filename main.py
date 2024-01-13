@@ -12,7 +12,7 @@ def mkdirs(type_of):
 currDir = str(os.getcwd())
 
 files = [f for f in os.listdir(".") if os.path.isfile(f) and not f.startswith('.') and not f.__eq__(__file__)]
-print("{} is of type {}".format(files[0], type(files[0])))
+
 
 logFile = open(currDir + "/log.txt", "a")
 errFile = open(currDir + "/errLog.txt","a")
