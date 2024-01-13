@@ -1,26 +1,12 @@
 import os  # allows us to interact with the directory
 from shutil import move  # offers high level file interaction
+from constants import *
 import datetime  # to write to current time to log file
-
 
 def mkdirs(type_of):
     print(currDir)
     if not os.path.isdir(currDir + "/{}".format(type_of)):
         os.mkdir("{}".format(type_of))
-
-
-# all possible file types:
-# access them by indexing the key in the dictionary
-file_types = {'document_types': '.doc .docx .txt .pdf .xls .ppt .xlsx .pptx .zip',
-              'img_types': '.JPG .jpeg .png .svg .gif .tif .tiff .bmp .psd .HEIC',
-              'software_types': '.exe .pkg .dmg .msi .app .deb .rpm .msp .iso',
-              'code_types': '.py .java .html .js .jsx'
-              }
-
-document_types = ('.doc', '.docx', '.txt', '.pdf', '.xls', '.ppt', '.xlsx', '.pptx', '.zip')
-img_types = ('.JPG', '.jpeg', '.png', '.svg', '.gif', '.tif', '.tiff', '.bmp', '.psd', '.HEIC')
-software_types = ('.exe', '.pkg', '.dmg', '.msi', '.app', '.deb', '.rpm', '.msp', '.iso')
-code_types = ('.py', '.java', '.html', '.js', '.jsx')
 
 # current working dir
 currDir = str(os.getcwd())
