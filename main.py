@@ -13,7 +13,6 @@ currDir = str(os.getcwd())
 
 files = [f for f in os.listdir(".") if os.path.isfile(f) and not f.startswith('.') and not f.__eq__(__file__)]
 
-
 logFile = open(currDir + "/log.txt", "a")
 errFile = open(currDir + "/errLog.txt","a")
 
