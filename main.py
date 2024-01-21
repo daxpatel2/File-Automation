@@ -3,10 +3,13 @@ from shutil import move  # offers high level file interaction
 from constants import *
 import datetime  # to write to current time to log file
 
+#change to json based logging
+
 def mkdirs(type_of):
     print(currDir)
     if not os.path.isdir(currDir + "/{}".format(type_of)):
         os.mkdir("{}".format(type_of))
+
 
 # current working dir
 currDir = str(os.getcwd())
@@ -14,7 +17,7 @@ currDir = str(os.getcwd())
 files = [f for f in os.listdir(".") if os.path.isfile(f) and not f.startswith('.') and not f.__eq__(__file__)]
 
 logFile = open(currDir + "/log.txt", "a")
-errFile = open(currDir + "/errLog.txt","a")
+errFile = open(currDir + "/errLog.txt", "a")
 
 mkdirs("img")
 for idx, file in enumerate(files):
@@ -24,7 +27,7 @@ for idx, file in enumerate(files):
             logFile.write('Successfully moved {} to img folder on {}\n'.format(file, datetime.datetime.now()))
             del files[idx]
         except Exception as e:
-            errFile.write("Failed to move file {}, because {} on {}\n".format(file,e,datetime.datetime.now()))
+            errFile.write("Failed to move file {}, because {} on {}\n".format(file, e, datetime.datetime.now()))
 
 mkdirs("docs")
 for idx, file in enumerate(files):
@@ -34,7 +37,7 @@ for idx, file in enumerate(files):
             logFile.write('Successfully moved {} to docs folder on {}\n'.format(file, datetime.datetime.now()))
             del files[idx]
         except Exception as e:
-            errFile.write("Failed to move file {}, because {} on {}\n".format(file,e,datetime.datetime.now()))
+            errFile.write("Failed to move file {}, because {} on {}\n".format(file, e, datetime.datetime.now()))
 
 mkdirs("software")
 for idx, file in enumerate(files):
@@ -44,7 +47,7 @@ for idx, file in enumerate(files):
             logFile.write('Successfully moved {} to software folder on {}\n'.format(file, datetime.datetime.now()))
             del files[idx]
         except Exception as e:
-            errFile.write("Failed to move file {}, because {} on {}\n".format(file,e,datetime.datetime.now()))
+            errFile.write("Failed to move file {}, because {} on {}\n".format(file, e, datetime.datetime.now()))
 
 mkdirs("code")
 for idx, file in enumerate(files):
@@ -54,12 +57,15 @@ for idx, file in enumerate(files):
             logFile.write('Successfully moved {} to code folder on {}\n'.format(file, datetime.datetime.now()))
             del files[idx]
         except Exception as e:
-            errFile.write("Failed to move file {}, because {} on {}\n".format(file,e,datetime.datetime.now()))
+            errFile.write("Failed to move file {}, because {} on {}\n".format(file, e, datetime.datetime.now()))
 
 logFile.close()
 errFile.close()
 
+
 def main():
     if __name__ == '__main__':
         print("-------->RUNNING PROGRAM<--------")
+
+
 main()
