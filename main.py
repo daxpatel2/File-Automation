@@ -3,6 +3,8 @@ from shutil import move  # offers high level file interaction
 from constants import *
 import datetime  # to write to current time to log file
 
+#test for git
+
 def mkdirs(type_of):
     print(currDir)
     if not os.path.isdir(currDir + "/{}".format(type_of)):
